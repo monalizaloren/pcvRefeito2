@@ -117,7 +117,11 @@
         </section>
     </div>
  <!--Terceira section-->
- 
+  <div id="mensagemErro" style="display: none;">
+                <!-- Mensagem de erro será exibida aqui -->
+                <h1>Erro: Página não encontrada!</h1>
+                <p>Desculpe, a página que você está tentando acessar não existe.</p>
+              </div>
     <div class="background-benefits">
         <div class="background-top"></div>
             <section id="benefits">
@@ -1372,16 +1376,17 @@
         showSlide(currentIndex);
         // script.js
 
-   document.addEventListener('DOMContentLoaded', function () {
-      // Verifica se a URL contém "index.html"
-      if (window.location.href==='https://monalizaloren.github.io/pcvRefeito2/') {
-       console.log('tudo certo')
-      }
-       else{
-        window.location.href = 'https://monalizaloren.github.io/pcvRefeito2/erro.html';
+ document.addEventListener('DOMContentLoaded', function () {
+      // Verifica se a URL é igual à página principal
+      if (window.location.href === 'https://monalizaloren.github.io/pcvRefeito2/') {
+        // Mantém o usuário na página principal
+        console.log("Conteúdo normal");
+      } else {
+        // Exibe a mensagem de erro na div apropriada
+        document.getElementById('conteudoNormal').style.display = 'none';
+        document.getElementById('mensagemErro').style.display = 'block';
       }
     });
-
         
 
     </script>
