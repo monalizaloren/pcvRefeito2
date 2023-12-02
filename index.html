@@ -1372,22 +1372,23 @@
         showSlide(currentIndex);
         // script.js
 
-// Função para verificar se a URL é válida (exemplo simples)
-function isUrlValid(url) {
-    // Implemente a lógica de validação da URL conforme necessário
-    // Este é um exemplo simples que verifica se a URL contém a substring "home"
-    return url.includes("https://monalizaloren.github.io/pcvRefeito2/");
-}
+     document.addEventListener('DOMContentLoaded', function () {
+      // Verifica se a URL é válida
+      var urlIsValid = validarURL();
 
-// Verifica a validade da URL ao carregar a página
-document.addEventListener("DOMContentLoaded", function () {
-    var currentUrl = window.location.href;
+      // Redireciona para a página de erro se a URL não for válida
+      if (!urlIsValid) {
+        window.location.href = 'erro.html';
+      }
+    });
 
-    if (!isUrlValid(currentUrl)) {
-        // Redireciona para a página de erro ou exibe uma mensagem de erro
-        window.location.href = "https://monalizaloren.github.io/pcvRefeito2/erro.html";
+    function validarURL() {
+      // Obtém a parte do caminho da URL após o domínio
+      var path = window.location.pathname;
+
+      // Verifica se o caminho é válido (por exemplo, contém "index.html")
+      return path.includes('index.html');
     }
-});
 
     </script>
 </body>
